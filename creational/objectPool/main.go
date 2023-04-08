@@ -41,6 +41,7 @@ func (p *pool) loan() (iPool, error) {
 	p.idle = p.idle[1:]
 	p.active = append(p.active, obj)
 	fmt.Printf("Loan object with id: %s", obj.getID())
+	fmt.Println()
 	return obj, nil
 }
 
@@ -52,6 +53,7 @@ func (p *pool) release(obj iPool) error {
 	}
 	p.idle = append(p.idle, obj)
 	fmt.Printf("Release object with id: %s", obj.getID())
+	fmt.Println()
 	return nil
 }
 
